@@ -30,7 +30,7 @@ class Session
 	 * SESSION SUPER GLOBAL
 	 * @return bool
 	 */
-	private function getSession()
+	private function setSession()
 	{
 		return $this->container = $_SESSION;
 	}
@@ -42,7 +42,7 @@ class Session
 	 * THE CONTAINER
 	 * @return bool
 	 */
-	private function setSession()
+	private function getSession()
 	{
 		return $_SESSION = $this->container;
 	}
@@ -56,7 +56,7 @@ class Session
 	 */
 	private function pushChanges()
 	{
-		return $this->setSession();
+		return $this->getSession();
 	}
 
 	/**
@@ -67,7 +67,7 @@ class Session
 	 */
 	public function __construct()
 	{
-		$this->setSession();
+		$this->getSession();
 	}
 
 	/**
